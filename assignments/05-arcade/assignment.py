@@ -18,8 +18,11 @@ def boss_dead(t, a, x, b):
     """
 
     # Your code here
-    
-    return False
+    if (t//a+t//x)>b:
+        bool_dead = True
+    else:
+        bool_dead = False
+    return bool_dead
 
 # Part 2 - figuring out when the game ends
 def game_length(a, x, b):
@@ -37,8 +40,10 @@ def game_length(a, x, b):
     """
 
     # Your code here
-
-    return 0
+    t = 0
+    while t//a + t//b < b:
+        t += 1
+    return t
 
 # Part 4 - optimised code using binary search
 def game_length_opt(a, x, b):
